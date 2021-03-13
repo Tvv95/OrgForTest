@@ -1,5 +1,5 @@
-trigger AccountTrigger on Account (before insert) {
-    if (HandlerForOneTimeTriggers.isCallFirstTime()) {
-        AccountTriggerHandler.handleBeforeInsert(Trigger.new);
-    }
+trigger AccountTrigger on Account(before insert) {
+  if (Trigger.isBefore && Trigger.isInsert) {
+    AccountTriggerHandler.handleBeforeInsert(Trigger.new);
+  }
 }

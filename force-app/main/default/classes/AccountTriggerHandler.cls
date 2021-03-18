@@ -1,4 +1,4 @@
-public inherited sharing class AccountTriggerHandler {
+public with sharing class AccountTriggerHandler {
   public static void handleBeforeInsert(List<Account> accList) {
     AccountHelper.updateAccDescription(accList);
   }

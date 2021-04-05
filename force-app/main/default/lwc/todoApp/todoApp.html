@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <div class="mainContainer">
+            <lightning-radio-group label="Category" options={options} value={radioValue} onchange={handleRadio}>
+            </lightning-radio-group>
+            <c-todo-list category={radioValue}></c-todo-list>
+            <lightning-button label="Create Todo" class="slds-var-m-around-medium" onclick={createTodo}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

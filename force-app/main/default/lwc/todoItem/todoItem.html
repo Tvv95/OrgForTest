@@ -1,0 +1,33 @@
+<template>
+        <th scope="row">
+            <div class="slds-truncate">
+                <div class="slds-truncate title">{todoData.Name}</div>
+            </div>
+        </th>
+        <td class="slds-cell-wrap" role="gridcell">
+            <div class="slds-line-clamp">{todoData.Description__c}</div>
+        </td>
+        <td role="gridcell">
+            <div class="slds-truncate">{todoData.Creation_Date__c}</div>
+        </td>
+        <td role="gridcell" class={todoData.Category__c}>
+            <div class="slds-truncate">{todoData.Category__c}</div>
+        </td>
+        <td role="gridcell">
+            <div class="slds-truncate">{todoData.Priority__c}</div>
+        </td>
+        <td role="gridcell">
+            <div class="slds-truncate">{todoData.Status__c}</div>
+        </td>
+        <td role="gridcell">
+            <div class="slds-truncate">
+                <img src={todoData.Image__c}>
+            </div>
+        </td>
+        <td role="gridcell" class="slds-p-around_medium lgc-bg">
+            <lightning-button-menu menu-alignment="right">
+                <lightning-menu-item label="Edit" onclick={editTodo}></lightning-menu-item>
+                <lightning-menu-item label="Delete" data-recordid={todoData.Id} onclick={deleteTodo}></lightning-menu-item>
+            </lightning-button-menu>
+          </td>
+</template>

@@ -1,0 +1,43 @@
+<template>
+    <c-search-bar onsearch={handleSearch}>
+    </c-search-bar>
+    <template if:true={todos}>
+        <table class="slds-table slds-table_bordered dataTable" role="grid">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">Title</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center" title="Description">Description</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">Creation Date</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">Category</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">Priority</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">Status</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">Image</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={todos} for:item="todo">
+                    <c-todo-item key={todo.Id} todo-data={todo} ondelete={handleDelete}></c-todo-item>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={error}>
+        <div class="dataTable">
+            <h2>Your Todo List is empty</h2>
+        </div>
+    </template>
+</template>

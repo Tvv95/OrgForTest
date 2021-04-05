@@ -1,0 +1,23 @@
+:host {
+  display: table-row;
+}
+
+.slds-line-clamp {
+    overflow-wrap: anywhere;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.Today {
+    background-color: red;
+}
+
+.Tomorrow {
+    background-color: yellow;
+}
+
+.Later {
+    background-color: green;
+}
